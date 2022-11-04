@@ -1,0 +1,25 @@
+<body>
+<h1>Math Trainer</h1>
+<h2>Settings</h2>
+
+<div class="">
+  <label>Amount of digits:</label>
+<select [(ngModel)]="settings.digit">
+  <option *ngFor="let number of settings.digits" [ngValue]="number" >{{number}}</option>
+</select>
+</div>
+
+<div class="">
+  <label>Amount of questions:</label>
+  <select [(ngModel)]="settings.questionAmount">
+    <option *ngFor="let number of settings.questionDigit" [ngValue]="number" >{{number}}</option>
+  </select>
+  </div>
+
+  <div class="">
+    <label *ngFor="let operator of settings.operators let i = index">{{operator}}
+      <input type="checkbox" [(ngModel)]="settings.currentOperators[i]">
+    </label>
+    </div>
+<button routerLink="/exercises">Start Exercise</button>
+</body>
